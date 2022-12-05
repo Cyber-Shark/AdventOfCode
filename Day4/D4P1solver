@@ -1,0 +1,30 @@
+input_list = open(r"Day4/day4input.txt", "r")
+
+count = 0
+
+for line in input_list:
+    elf1_range, elf2_range = line.split(",")
+    elf1_range_low, elf1_range_high = elf1_range.split("-")
+    elf2_range_low, elf2_range_high = elf2_range.split("-")
+
+    elf1_range_low = int(elf1_range_low)
+    elf1_range_high = int(elf1_range_high)
+    elf2_range_low = int(elf2_range_low)
+    elf2_range_high = int(elf2_range_high)
+
+    # print(elf1_range)
+    # print(elf1_range_low)
+    # print(elf1_range_high)
+    # print(elf2_range)
+    # print(elf2_range_low)
+    # print(elf2_range_high)
+
+    if (elf1_range_low <= elf2_range_low and elf1_range_high >= elf2_range_high) or (
+        elf1_range_low >= elf2_range_low and elf1_range_high <= elf2_range_high
+    ):
+        count += 1
+        print(f"Current Count:{count}")
+    else:
+        print("No Increase")
+
+print(count)
