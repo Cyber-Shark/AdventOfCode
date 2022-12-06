@@ -28,10 +28,11 @@ run = 0
 input_list = open(r"Day5/day5steps.txt", "r")
 
 for line in input_list:
-    aa, box_qty, cc, column_from, ee, column_to = line.split()
-    box_qty = int(box_qty)
+    aa, box_qty_str, cc, column_from_str, ee, column_to_str = line.split()
+    box_qty = int(box_qty_str)
+    column_to = int(column_to_str)
+    column_from = int(column_from_str)
 
-    stack_list[int(column_to) - 1] += stack_list[int(column_from) - 1][-box_qty:]
-    stack_list[int(column_from) - 1] = stack_list[int(column_from) - 1][:-box_qty]
-
-print(stack_list)
+    stack_list[column_to - 1] += stack_list[column_from - 1][-box_qty:]
+    stack_list[column_from - 1] = stack_list[column_from - 1][:-box_qty]
+    print(stack_list)

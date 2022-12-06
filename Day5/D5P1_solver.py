@@ -20,24 +20,23 @@ stack9: str = "WPVMBH"
 
 stack_list = [stack1, stack2, stack3, stack4, stack5, stack6, stack7, stack8, stack9]
 
-column_from = 0
-column_to = 0
-box_qty = 0
 
 # move 1 from 3 to 9
 input_list = open(r"Day5/day5steps.txt", "r")
 
 for line in input_list:
-    aa, box_qty, cc, column_from, ee, column_to = line.split()
-    box_qty = int(box_qty)
+    _, box_qty_str, _, column_from_str, _, column_to_str = line.split()
+    box_qty = int(box_qty_str)
+    column_to = int(column_to_str)
+    column_from = int(column_from_str)
     # print(box_qty)
     # print(column_from)
     # print(stack_list[int(column_from)])
     # print(column_to)
 
     for box in range(box_qty):
-        stack_list[int(column_to) - 1] += stack_list[int(column_from) - 1][-1]
-        stack_list[int(column_from) - 1] = stack_list[int(column_from) - 1][:-1]
+        stack_list[column_to - 1] += stack_list[column_from - 1][-1]
+        stack_list[column_from - 1] = stack_list[column_from - 1][:-1]
         # print(stack_list[int(column_from) - 1])
         # print(stack_list[int(column_to) - 1])
         print(stack_list)

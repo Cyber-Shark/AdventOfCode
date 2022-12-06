@@ -35,19 +35,22 @@ line_count = 0
 input_list = open(r"Day5/day5steps.txt", "r")
 print(stack_list)
 for line in input_list:
-    aa, box_qty, cc, column_from, ee, column_to = line.split()
-    box_qty = int(box_qty)
-    neg_box_qty = box_qty * -1
+    aa, box_qty_str, cc, column_from_str, ee, column_to_str = line.split()
 
-    stack_from = int(column_from) - 1
-    stack_to = int(column_to) - 1
+    box_qty = int(box_qty_str)
+    stack_from = int(column_from_str) - 1
+    stack_to = int(column_to_str) - 1
 
-    stack_list[stack_to] += stack_list[stack_from].pop(box_qty)
+    for box in range(box_qty):
+        boxes
+
+        stack_list[stack_to] += stack_list[stack_from].pop(-box_qty)
+        box_qty
 
 print(stack_list)
 
-# final = stack_list.pop()
-# print(final)
+final = stack_list.pop()
+print(final)
 
 [
     ["Q", "P", "S", "Z", "R", "H", "D", "R"],
