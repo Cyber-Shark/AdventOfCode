@@ -42,7 +42,6 @@ for line in input_list:
     stack_to = int(column_to_str) - 1
 
     for box in range(box_qty):
-        boxes
 
         stack_list[stack_to] += stack_list[stack_from].pop(-box_qty)
         box_qty
